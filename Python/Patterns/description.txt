@@ -7,13 +7,13 @@
 5. Singleton - singleton.py // singleton_meta.py
 
 Структурные паттерны:
-1. Adapter - .py
-2. Bridge - .py
-3. Composite - .py
-4. Decorator - .py
-5. Facade - .py
-6. Flyweight - .py
-7. Proxy - .py
+1. Adapter - adapter.py
+2. Bridge - bridge.py
+3. Composite - composite.py
+4. Decorator - decorator.py
+5. Facade - facade.py
+6. Flyweight - flyweight.py
+7. Proxy - proxy.py
 
 Поведенческие паттерны:
 1. Chain of Responsibility - .py
