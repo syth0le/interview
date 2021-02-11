@@ -8,13 +8,18 @@ class Singleton(object):
         return cls.instance
 
 
-check = Singleton()
-print("Object created", check)
-check2 = Singleton()
-print("Object created", check2)
+def main():
+    check = Singleton()
+    print("Object created", check)
+    check2 = Singleton()
+    print("Object created", check2)
 
-if isinstance(check, Singleton) & isinstance(check2, Singleton):
-    print(True)
+    if isinstance(check, Singleton) & isinstance(check2, Singleton):
+        print(True)
 
-if check == check2:
-    print('It\'s the same!')
+    if check == check2:
+        print('It\'s the same!')
+
+
+if __name__ == '__main__':
+    main()

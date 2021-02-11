@@ -1,9 +1,9 @@
 Порождающие паттерны:
 №. Name - file_name
 1. Factory Method - factory.py
-2. Abstract Factory - .py
-3. Builder - .py
-4. Prototype - .py
+2. Abstract Factory - abstract_factory.py
+3. Builder - builder.py
+4. Prototype - prototype.py
 5. Singleton - singleton.py // singleton_meta.py
 
 Структурные паттерны:

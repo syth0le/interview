@@ -16,12 +16,16 @@ class Logger(metaclass=MetaSingleton):
     pass
 
 
-logger1 = Logger()
-logger2 = Logger()
+def main():
+    logger1 = Logger()
+    logger2 = Logger()
 
-if isinstance(logger1, Logger) & isinstance(logger2, Logger):
-    print(True)
+    if isinstance(logger1, Logger) & isinstance(logger2, Logger):
+        print(True)
 
-if logger1 == logger2:
-    print('It\'s the same!')
+    if logger1 == logger2:
+        print('It\'s the same!')
 
+
+if __name__ == '__main__':
+    main()

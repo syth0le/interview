@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+
 class Language:
     def __repr__(self):
         return self.__str__()
@@ -42,17 +43,22 @@ class ProjectB(Project):
         self.language = Swift()
 
 
-project1 = ProjectA()
-project1.set_language()
-print(str(project1))
+def main():
+    project1 = ProjectA()
+    project1.set_language()
+    print(str(project1))
 
-project2 = ProjectB()
-project2.set_language()
-print(str(project2))
+    project2 = ProjectB()
+    project2.set_language()
+    print(str(project2))
 
-if isinstance(project1, Project) & isinstance(project2, Project):
-    print(True)
+    if isinstance(project1, Project) & isinstance(project2, Project):
+        print(True)
 
-# project3 = Project() # dont work for not implemented func in ancestor class
-# project3.set_language()
-# print(str(project3))
+    # project3 = Project() # dont work for not implemented func in ancestor class
+    # project3.set_language()
+    # print(str(project3))
+
+
+if __name__ == '__main__':
+    main()
