@@ -46,7 +46,9 @@ def main():
     obj2 = obj1.clone()
     print(f'Second object: {obj2}')
 
-    obj2.array[0] = 'CHANGED'
+    obj2.array[0] = 'CHANGED_2'
+    obj2.component = 'CHANGED_2'
+    obj1.component = 'CHANGED_1'
     print(f'Second object: {obj2} type: {type(obj2)}')
     print(f'First object: {obj1} type: {type(obj1)}')
 
