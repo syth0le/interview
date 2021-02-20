@@ -96,6 +96,7 @@ if __name__ == '__main__':
     boromir = Boromir()
     squad.add(boromir)
     squad.remove(boromir)
+    squad.remove(boromir)
     squad.print()
     squad_big = RingSquad()
     squad_big.add(Hobbit())
