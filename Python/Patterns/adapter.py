@@ -1,4 +1,5 @@
 from abc import ABCMeta, abstractmethod
+# На сайте два подхода композиционный и наследсвтенный  надо почекать что куда и как
 
 
 class IA(metaclass=ABCMeta):
