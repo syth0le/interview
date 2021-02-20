@@ -18,10 +18,10 @@
 Поведенческие паттерны:
 1. Chain of Responsibility - .py
 2. Command - .py
-3. Iterator - .py
+3. Iterator - iterator.py
 4. Mediator - .py
 5. Memento - .py
-6. Observer - .py
+6. Observer - observer.py
 7. State - .py
 8. Strategy - .py
 9. Template Method - .py
