@@ -1,16 +1,16 @@
 Порождающие паттерны:
 №. Name - file_name
-1. Factory Method - factory.py
-2. Abstract Factory - abstract_factory.py
-3. Builder - builder.py
-4. Prototype - prototype.py
-5. Singleton - singleton.py // singleton_meta.py
+1. Factory Method - factory.py +
+2. Abstract Factory - abstract_factory.py +
+3. Builder - builder.py +
+4. Prototype - prototype.py +
+5. Singleton - singleton.py // singleton_meta.py ++
 
 Структурные паттерны:
-1. Adapter - adapter.py
-2. Bridge - bridge.py
+1. Adapter - adapter.py +
+2. Bridge - bridge.py +
 3. Composite - composite.py
-4. Decorator - decorator.py
+4. Decorator - decorator.py +
 5. Facade - facade.py
 6. Flyweight - flyweight.py
 7. Proxy - proxy.py
