@@ -59,3 +59,4 @@ if __name__ == "__main__":
     comp.change(Hibernate)
     comp.change(On)
     comp.change(Off)
+    comp.change(Suspend)
