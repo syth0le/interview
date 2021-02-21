@@ -25,4 +25,4 @@
 7. State - .py
 8. Strategy - .py
 9. Template Method - .py
-10. Visitor - .py
+10. Visitor - visitor.py
