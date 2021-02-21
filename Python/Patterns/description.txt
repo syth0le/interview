@@ -22,7 +22,7 @@
 4. Mediator - mediator.py
 5. Memento - memento.py
 6. Observer - observer.py
-7. State - .py
+7. State - state.py
 8. Strategy - .py
 9. Template Method - .py
 10. Visitor - visitor.py
