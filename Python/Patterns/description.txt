@@ -17,7 +17,7 @@
 
 Поведенческие паттерны:
 1. Chain of Responsibility - chain_of_responsibility.py
-2. Command - .py
+2. Command - command.py
 3. Iterator - iterator.py
 4. Mediator - .py
 5. Memento - .py
