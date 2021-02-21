@@ -26,3 +26,4 @@
 8. Strategy - strategy.py
 9. Template Method - template_method.py
 10. Visitor - visitor.py
+11. Interpreter - interpreter.py
