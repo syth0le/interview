@@ -39,6 +39,8 @@ def main():
     print(m.attribute)
     # cant to assign THATS PRIVATE field.
     # we cant to rewrite data on private fields
+    m = MainClass(False)
+    print(m.attribute)
 
 
 if __name__ == "__main__":
