@@ -16,7 +16,7 @@
 7. Proxy - proxy.py
 
 Поведенческие паттерны:
-1. Chain of Responsibility - .py
+1. Chain of Responsibility - chain_of_responsibility.py
 2. Command - .py
 3. Iterator - iterator.py
 4. Mediator - .py
