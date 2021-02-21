@@ -19,7 +19,7 @@
 1. Chain of Responsibility - chain_of_responsibility.py
 2. Command - command.py
 3. Iterator - iterator.py
-4. Mediator - .py
+4. Mediator - mediator.py
 5. Memento - memento.py
 6. Observer - observer.py
 7. State - .py
