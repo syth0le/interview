@@ -1,2 +1,4 @@
 *.doc
 *.docx
+.idea/
+.idea
