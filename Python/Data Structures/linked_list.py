@@ -9,6 +9,9 @@ class Node:
     def get_current(self):
         return self._data, self._next
 
+    def delete(self, prev):
+        prev.set_next(self.get_current()[1])
+
 
 class LinkedList:
 
@@ -25,18 +28,31 @@ class LinkedList:
         next_one = self._head
         while next_one is not None:
             current, next_one = next_one.get_current()
-            print(current)
+            yield current, next_one
+            # return current, next_one
 
 
 if __name__ == "__main__":
-    a = Node(10)
-    b = Node(12)
-    c = Node(14)
+    a = Node(4)
+    b = Node(5)
+    c = Node(1)
+    d = Node(9)
     a.set_next(b)
     b.set_next(c)
+    c.set_next(d)
+
+    linked_list = LinkedList()
+    linked_list.add(a)
+    for elem, next_el in linked_list.show():
+        print(elem, next_el)
+
+    b.delete(a)
 
     linked_list = LinkedList()
     linked_list.add(a)
     print(linked_list)
-    linked_list.show()
+    for elem, next_el in linked_list.show():
+        print(elem, next_el)
+
+
 
