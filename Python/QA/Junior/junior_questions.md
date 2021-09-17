@@ -7,13 +7,13 @@ A:
 Q: What is the lambda function in Python? Why does it exist in Python?  
 A:
 
-Q: What is pass in Python?  
+Q: What is `pass` in Python?  
 A:
 
 Q: What is `*args, **kwargs` in function definition?  
 A:
 
-Q: What is docstring in Python? How to write them? Are they required? 
+Q: What is docstring in Python? How to write them? Are they required?  
 A:
 
 Q: What are the built-in data types that Python provides? Which of them are mutable, which are immutable?  
