@@ -58,7 +58,7 @@ A:
 Q: How can you share global variables across modules? Is it a good idea to do that?  
 A:
 
-Q: What is the __slots__ attribute used in a class for?  
+Q: What is the `__slots__` attribute used in a class for?  
 A:
 
 Q: What are metaclasses in Python?  
@@ -163,7 +163,7 @@ The output looks like this:
 ```python
 0 1 8 27 64
 ```
-Write a function f() so that we can have the output above.  
+Write a function `f()` so that we can have the output above.  
 A: [11_answer](11_unknown_func.py)
 
 Q: What's the output of the following code?  

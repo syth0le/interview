@@ -137,7 +137,7 @@ def Foo():
     yield 42;
     return 666
 ```
-A:
+A: `42  # because it's a generator (doesn't return 666)`
 
 Q: What will be the output of the following code?  
 ```python
@@ -145,7 +145,7 @@ a = [[]] * 3
 a[1].append(1)
 print(a)  # [[1], [1], [1]
 ```
-A:
+A: `[[1], [1], [1]`
 
 Q: Place the following functions below in order of their efficiency. How would you test your answer?  
 ```python
@@ -162,7 +162,7 @@ def f3(arr):
     l2 = sorted(l1)
     return [i for i in l1 if i < (0.5*0.5)]
 ```
-A:
+A: [9_answer](9_O_big.py)
 
 Q: Write a one-liner that will count the number of capital letters in a file. 
 Your code should work even if the file is too big to fit in memory.  
@@ -176,7 +176,11 @@ class C:
 type (C())
 type (C)
 ```
-A:
+A: First will be instance of class C, second one will be instance of type cause inheritance.
+```python
+<class '__main__.C'>
+<class 'type'>
+```
 
 Q: What will be the output of the following code?  
 ```python
@@ -187,7 +191,11 @@ small_num_2 = 1
 big_num_1 is big_num_2
 small_num_1 is small_num_2
 ```
-A:
+A: I DONT KNOW WHY
+```python
+True
+True
+```
 
 Q: How is this possible?  
 ```python
@@ -200,17 +208,24 @@ class MangledGlobal:
 print(MangledGlobal().test())  # 23
 ```
 
-A:
+A: problems with naming in python.  
+In this example I declared a global variable called `_MangledGlobal__mangled`. Then I accessed the variable inside the 
+context of a class named `MangledGlobal`. Because of name mangling I was able to reference the `_MangledGlobal__mangled` 
+global variable as just `__mangled` inside the `test()` method on the class.
+
+The Python interpreter automatically expanded the name `__mangled` to `_MangledGlobal__mangled` because it begins with 
+two underscore characters. This demonstrated that name mangling isn’t tied to class attributes specifically. 
+It applies to any name starting with two underscore characters used in a class context.
 
 Q: What will be the output of the following code?  
 ```python
 print(_)
 ```
-A:
+A: `NameError: name '_' is not defined`
 
 Q: You saw the following piece of code. What is wrong with this code? Why is it needed?  
 ```python
 if __debug__:
     assert False, ("error")
 ```
-A:
+A: `AssertionError: error`
