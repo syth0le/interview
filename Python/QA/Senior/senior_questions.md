@@ -1,4 +1,5 @@
-##Senior questions python:
+Senior questions python:
+======
 
 Q: Python always called an easy language. Will you agree with it?  
 A:
@@ -110,7 +111,8 @@ How would you start debugging it?
 A:
 
 
-###Coding questions:  
+Coding questions:
+------
 
 Q: Give an example of a filter and reduce over an iterable object.  
 A:

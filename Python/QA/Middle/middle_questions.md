@@ -1,4 +1,5 @@
-##Middle questions python:
+Middle questions python:
+======
 
 Q: What is the output of -12 % 10?  
 A:
@@ -67,7 +68,8 @@ Q: How to create a class without a class statement?
 A:
 
 
-###Coding questions:
+Coding questions:
+------
 
 Q: What will be the output of the following code?  
 ```python

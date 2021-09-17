@@ -1,4 +1,5 @@
-##Junior questions python:
+Junior questions python:
+======
 
 Q: What is Python?  
 A:
@@ -86,7 +87,8 @@ Q: What is pickling and unpickling(marshaling and unmarshaling)?
 A:
 
 
-###Coding questions:
+Coding questions:
+------
 
 Q: Write a function that produces the Fibonacci sequence.  
 A:
