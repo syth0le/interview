@@ -77,10 +77,10 @@ list = ['a', 'b', 'c', 'd', 'e']
 print(list[10:]) # []
 ```
 
-A:
+A: `[]`
 
 Q: How can I reload a previously imported module? (we assume that the module is a file module.py)  
-A:
+A: --//--
 
 Q: What will be the output of the following code?  
 ```python
@@ -88,7 +88,7 @@ a = [[]]*3
 a[1].append(1)
 print(a)  # [[1], [1], [1]]
 ```
-A:
+A: `[[1], [1], [1]]`
 
 Q: What's wrong with the following code?  
 ```python
@@ -96,7 +96,7 @@ def foo():
     from .module import *
     print(f"{bar()}")
 ```
-A:
+A: `SyntaxError: import * only allowed at module level`
 
 Q: The file is located in /usr/lib/python/person.py. The program is run with python /usr/lib/python/person.py. 
 What will the output be?  
@@ -111,13 +111,13 @@ class Person:
 p = Person("John")
 p.getAge()
 ```
-A:
+A: `__main__`
 
 Q: Write a timeit decorator to measure the time of function execution.  
-A:
+A: [6_answer](6_decorator_time.py)
 
 Q: Write a decorator that will catch errors and repeat the function a maximum of 3 times (configurable).  
-A:
+A: [7_answer](7_decorator_repeater.py)
 
 Q: What's the output of the following code?  
 ```python
@@ -132,7 +132,7 @@ class child:
 obj = child(11)
 print(obj.v1 + " " + obj.v2)
 ```
-A:
+A: `AttributeError: 'child' object has no attribute 'v1'`
 
 Q: Fix the following code to make it work.  
 ```python
@@ -145,15 +145,15 @@ repeater = Repeater("Hello")
 for i in repeater:
     print(i)  # hello
 ```
-A:
+A: [9_answer](9_repeater.py)
 
 Q: Write code to get unique values from a list of complex types (custom classes). Example:  
 ```python
 [A(1, "ab"), A(2, "ab"), A(2, "aa"), A(1, "ab")] -> [A(1, "ab"), A(2, "ab"), A(2, "aa")]
 ```
-A:
+A: [10_answer](10_unique_kwrgs.py)
 
-Q: We have the following code with the unknown function f(). In f(), we do not want to use a return, instead, 
+Q: We have the following code with the unknown function `f()`. In `f()`, we do not want to use a return, instead, 
 we may want to use a generator.  
 ```python
 for x in f(5):
@@ -164,11 +164,11 @@ The output looks like this:
 0 1 8 27 64
 ```
 Write a function f() so that we can have the output above.  
-A:
+A: [11_answer](11_unknown_func.py)
 
 Q: What's the output of the following code?  
 ```python
 x = [[0], [1]]
 print(len(' '.join(list(map(str, x)))))
 ```
-A:
+A: `7  # without len = [0] [1]`
