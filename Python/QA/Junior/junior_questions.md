@@ -91,14 +91,14 @@ Coding questions:
 ------
 
 Q: Write a function that produces the Fibonacci sequence.  
-A:
+A: [1 answer](1_fibonacci.py)
 
 Q: How to translate a string containing a binary code (1 and 0) into a number (integer)? Write a function to do this.  
-A:
+A: [2 answer](2_binary.py)
 
 Q: How to check that tuple A contains all elements of tuple B. Do both tuples contain unique values? 
 Write a function to do this.  
-A:
+A: [3 answer](3_tuples.py)
 
 Q: What is the output of the following code?  
 ```python
@@ -108,29 +108,29 @@ def f():
 x = 12
 f()
 ```
-A:
+A: `15`
 
 Q: How to convert a string to a number that consists of letters ASCII code. Example: `'abcd' -> 979899100`. 
 Write a function to do this.  
-A:
+A: [5 answer](5_ascii.py)
 
 Q: How to remove empty lines from a list of lines (with a length of 0). Write a function to do this.  
-A:
+A: [6 answer](6_empty_deleter.py)
 
 Q: Write a function that counts all distinct pairs with a difference equal to k.  
-A:
+A: [7 answer](7_distinct.py)
 
 Q: Write a function that returns a string of numbers from 0 to 100, `"0123456789101112..."`.  
-A:
+A: [8_answer](8_num_str.py)
 
 Q: Write a function that makes a list with unique items from a list with duplicate items. 
 Example: `[1, 1, 2, 3, 3] -> [1, 2, 3]`  
-A:
+A: [9_answer](9_unique_list.py)
 
 Q: Make a list of prime numbers from the range (1, 100) using Python.  
-A:
+A: [10_answer](10_list_primes.py)
 
 Q: Write a program that prints the numbers from 1 to 20. 
 But for multiples of three print “Fizz” instead of the number and for the multiples of five print “Buzz”. 
 For numbers that are multiples of both three and five print “FizzBuzz”.  
-A:
+A: [11_answer](11_fizzbuzz.py)

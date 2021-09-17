@@ -82,7 +82,7 @@ A:
 Q: Explain how can you access a module written in Python from C? Vise versa?  
 A:
 
-Q: What is __pycache__? What are .pyc files?  
+Q: What is `__pycache__`? What are .pyc files?  
 A:
 
 Q: How to speed up existing Python code? How would you speed up your, say, web app?  
