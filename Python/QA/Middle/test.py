@@ -1,29 +1,14 @@
-import timeit
+import dis
+def recursive_sum(n):
+    """Function to return the sum of recursive numbers"""
+    if n <= 1:
+        return n
+    else:
+        return n + recursive_sum(n-1)
 
-
-class GFG(object):
-    __slots__ = 'foo'
-
-
-class Usual(object):
-    pass
-
-
-def get_set_delete_fn(obj):
-    def get_set_delete():
-        obj.foo = 'foo'
-        obj.foo
-        del obj.foo
-    return get_set_delete
-
-
-if __name__ == "__main__":
-    instance = GFG()
-    instance_2 = Usual()
-    instance_2.new = "new"
-    print(instance_2.new)
-    instance.new = "new"
-    print(instance.new)
-    print(min(timeit.repeat(get_set_delete_fn(instance))))
-    print(min(timeit.repeat(get_set_delete_fn(instance_2))))
-
+# change this value for a different result
+number = 16
+if number < 0:
+    print("The sum is",recursive_sum(number))
+# by using dis module ,the bytecode is loaded into machine code ,and a piece of code that reads each instruction in the bytecode and executes whatever operation is indicated.
+dis.dis(recursive_sum)
