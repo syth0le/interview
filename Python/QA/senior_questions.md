@@ -3,7 +3,7 @@ Senior questions python:
 
 Q: Python always called an easy language. Will you agree with it?  
 A: Yes, becouse:
-Consider Hello World program in C,JAVA and PYTHON
+Consider Hello World program in C,JAVA and PYTHON  
 C CODE
 ```
 #include <stdio.h> 
