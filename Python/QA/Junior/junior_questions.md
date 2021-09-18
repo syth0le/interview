@@ -2,16 +2,17 @@ Junior questions python:
 ======
 
 Q: What is Python?  
-A:
+A: Python is an interpreted, object-oriented, high-level programming language with dynamic semantics.
 
 Q: What is the lambda function in Python? Why does it exist in Python?  
-A:
+A: Lambda Function in Python is an anonymous function or a function having no name. Lambda functions behave just 
+like regular functions declared with the def keyword. They can be used whenever function objects are required.
 
 Q: What is `pass` in Python?  
-A:
+A: The `pass` statement is a null statement. The pass statement is generally used as a placeholder
 
 Q: What is `*args, **kwargs` in function definition?  
-A:
+A: 
 
 Q: What is docstring in Python? How to write them? Are they required?  
 A:
@@ -62,7 +63,7 @@ A:
 Q: What is a decorator? How to create a custom decorator?  
 A:
 
-Q: What is `@classmethod, @staticmethod, @property`?  
+Q: What is `@classmethod`, `@staticmethod`, `@property`?  
 A:
 
 Q: What is the difference between `@classmethod` and `@staticmethod`?  

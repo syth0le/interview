@@ -8,7 +8,7 @@ Q: What are the pitfalls and problems of Python language?
 A:
 
 Q: Is it possible to use the construction `True = False`?  
-A:
+A: No, Only in python 2.x.
 
 Q: When will the else part of `try...except...else` be executed?  
 A:
@@ -44,92 +44,92 @@ A:
 
 Q: Is it possible to have a producer thread reading from the network and a consumer thread writing to a file, really 
 work in parallel? What about GIL?  
-A:
+A: 
 
 Q: What is GIL? Why GIL still exists?  
-A:
+A: 
 
 Q: What is string interning? Why it Python have it?  
 A:
 
 Q: Why Python doesn't have a tail recursion optimization? How to implement it?  
-A:
+A: 
 
 Q: What is the process of compilation and linking in Python?  
-A:
+A: 
 
 Q: How to distribute Python code?  
-A:
+A: 
 
 Q: How to package code in Python?  
-A:
+A: 
 
 Q: What is a package manager? What package managers do you know and which one do you recommend?  
-A:
+A: 
 
 Q: How to work with Python transitive dependencies?  
-A:
+A: 
 
 Q: What are the wheels and eggs? What is the difference?  
-A:
+A: 
 
 Q: How to package binary dependencies in Python?  
-A:
+A: 
 
 Q: What is Cython? What is IronPython? What is PyPy? Why do they still exist?  
-A:
+A: 
 
 Q: Explain how can you access a module written in Python from C? Vise versa?  
-A:
+A: 
 
 Q: What is `__pycache__`? What are .pyc files?  
-A:
+A: 
 
 Q: How to speed up existing Python code? How would you speed up your, say, web app?  
-A:
+A: 
 
 Q: How to isolate Python code? What are virtualenvs?  
-A:
+A: 
 
 Q: Is Python a functional language? Specify the requirements for code written in a functional paradigm.  
-A:
+A: 
 
 Q: Identify the pitfalls/limitations of the functional code.  
-A:
+A: 
 
 Q: What are .pth files?  
-A:
+A: 
 
 Q: What advantages do NumPy arrays offer over (nested) Python lists?  
-A:
+A: 
 
 Q: What does the PYTHONOPTIMIZE flag do?  
-A:
+A: 
 
 Q: You have a memory leak in the working production application on one of your company servers. 
 How would you start debugging it?  
-A:
+A: 
 
 
 Coding questions:
 ------
 
 Q: Give an example of a filter and reduce over an iterable object.  
-A:
+A: 
 
 Q: Write a function that reverses the generator?  
-A:
+A: 
 
 Q: You need to implement a function that should use a static variable (for example, a call counter). 
 You cannot write any code outside the function and you do not have information about external variables 
 (outside your function). How to do it?  
-A:
+A: 
 
 Q: What methods and in what order are called when print `(A() + B())` is executed?  
-A:
+A: 
 
 Q: How to implement a dictionary from scratch using core Python?  
-A:
+A: 
 
 Q: What's the output?  
 ```python
@@ -166,7 +166,7 @@ A: [9_answer](9_O_big.py)
 
 Q: Write a one-liner that will count the number of capital letters in a file. 
 Your code should work even if the file is too big to fit in memory.  
-A:
+A: 
 
 Q: What will be the output of the following code? Why? Is this inheritance?  
 ```python

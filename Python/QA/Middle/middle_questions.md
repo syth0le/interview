@@ -2,40 +2,42 @@ Middle questions python:
 ======
 
 Q: What is the output of -12 % 10?  
-A:
+A: 8
 
 Q: What is the output of -12 // 10?  
-A:
+A: -2
 
 Q: What is the sequence of call operators in the expression a * b * c?  
-A:
+A: 
 
 Q: Why shouldn't you make the default arguments an empty list?  
-A:
+A: cause in second function/method call it will refer to an already created object in memory.
 
-Q: What id() function in Python is for?  
-A:
+Q: What `id()` function in Python is for?  
+A: returns unique and permanent identificator for object
 
-Q: What is the yield keyword used for in Python?  
-A:
+Q: What is the `yield` keyword used for in Python?  
+A: returns a value without deleting local variables. Using in generators for example.
 
 Q: What is an iterator in Python? Can you write an example?  
-A:
+A: Iterator is an object that contains a countable number of values. Iterator is object which returns iterated values. 
 
 Q: What is a generator in Python? How are they different from iterators?  
-A:
+A: Generators is a subset of iterators. But it doesn't return its values after initialization.
+We can create generator and use it in other place in code. Finally, generators use keyword: `yield`.
 
-Q: What is the difference between __iter__ and __next__?  
-A:
+Q: What is the difference between `__iter__` and `__next__`?  
+A: `__iter__` returns the iterator object itself and the `__next__` method returns the next value from the iterator
 
 Q: How do you create a dictionary which can preserve the order of pairs?  
-A:
+A: Ordered dict from collections.
 
 Q: What is a context manager? How are they different from try ... finally?  
-A:
+A: Context manager `with` (or `from contextlib import contextmanager` and using it as decorator for function/method) 
+is a syntax sugar. [read about](https://medium.com/swlh/python-coding-tip-using-the-with-statement-instead-try-finally-f45a645c6008)
 
 Q: Which functions must be overridden in a class in order for its instances to implement the context manager protocol?  
-A:
+A: To implement a context manager, we define a class containing an `__enter__()` and `__exit__()` method
 
 Q: What is the synchronous code? What is asynchronous code? How to write asynchronous code?  
 A:
@@ -56,16 +58,17 @@ Q: How the garbage collector works in Python? Describe Python's garbage collecti
 A:
 
 Q: How can you share global variables across modules? Is it a good idea to do that?  
-A:
+A: 
 
 Q: What is the `__slots__` attribute used in a class for?  
-A:
+A: 
+Why use `__slots__` : Faster attribute access
 
 Q: What are metaclasses in Python?  
-A:
+A: 
 
 Q: How to create a class without a class statement?  
-A:
+A:  
 
 
 Coding questions:

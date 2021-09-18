@@ -1,2 +1,2 @@
-if __debug__:
-    assert False, ("error")
+False = True
+print(True)
