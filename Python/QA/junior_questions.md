@@ -21,7 +21,8 @@ provide a convenient way of associating documentation with Python modules, funct
 Docstring not a comments, docstring and # doc is not the same.
 
 Q: What are the built-in data types that Python provides? Which of them are mutable, which are immutable?  
-A: 
+A: Some of the mutable data types in Python are list, dictionary, set and user-defined classes. 
+On the other hand, some of the immutable data types are int, float, decimal, bool, string, tuple, and range.
 
 Q: What is the difference between list and tuple types in Python?  
 A: list is mutable, whereas a tuple is immutable. This means that lists can be changed, and tuples cannot be changed.

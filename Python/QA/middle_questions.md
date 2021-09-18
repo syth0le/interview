@@ -7,9 +7,6 @@ A: 8
 Q: What is the output of -12 // 10?  
 A: -2
 
-Q: What is the sequence of call operators in the expression a * b * c?  
-A: 
-
 Q: Why shouldn't you make the default arguments an empty list?  
 A: cause in second function/method call it will refer to an already created object in memory.
 
@@ -40,35 +37,180 @@ Q: Which functions must be overridden in a class in order for its instances to i
 A: To implement a context manager, we define a class containing an `__enter__()` and `__exit__()` method
 
 Q: What is the synchronous code? What is asynchronous code? How to write asynchronous code?  
-A:
+A: Synchronous means to be in a sequence, i.e. every statement of the code gets executed one by one.  
+
+Asynchronous coding often means that you need to multi-thread your code. 
+This means that you have to start another thread that can run independently of your main task. 
+This is often necessary because, as an example, waiting on communication 
+to complete completely stops the thread that is waiting from running.
+
+
 
 Q: What is unittest module in Python? How to write tests in Python?  
-A:
+A: The unittest module provides a rich set of tools for constructing and running tests. 
+[documentation](https://docs.python.org/2/library/unittest.html#).
+````python
+import unittest
+
+from Car import Car
+
+
+class TestCar(unittest.TestCase):
+      def setUp(self):
+          self.car = Car()
+
+
+class TestInit(TestCar):
+      def test_initial_speed(self):
+          self.assertEqual(self.car.speed, 0)
+
+      def test_initial_odometer(self):
+          self.assertEqual(self.car.odometer, 0)
+
+      def test_initial_time(self):
+          self.assertEqual(self.car.time, 0)
+
+
+class TestAccelerate(TestCar):
+      def test_accelerate_from_zero(self):
+          self.car.accelerate()
+          self.assertEqual(self.car.speed, 5)
+
+      def test_multiple_accelerates(self):
+          for _ in range(3):
+            self.car.accelerate()
+          self.assertEqual(self.car.speed, 15)
+
+
+class TestBrake(TestCar):
+       def test_brake_once(self):
+           self.car.accelerate()
+           self.car.brake()
+           self.assertEqual(self.car.speed, 0)
+
+       def test_multiple_brakes(self):
+            for _ in range(5):
+                self.car.accelerate()
+            for _ in range(3):
+                self.car.brake()
+            self.assertEqual(self.car.speed, 10)
+
+       def test_should_not_allow_negative_speed(self):
+           self.car.brake()
+           self.assertEqual(self.car.speed, 0)
+
+       def test_multiple_brakes_at_zero(self):
+           for _ in range(3):
+               self.car.brake()
+           self.assertEqual(self.car.speed, 0)
+````
 
 Q: What is type checking? Why Python is a strongly typed language? Do we have types in Python?  
-A:
+A: Type checking means checking that each operation should receive proper number of arguments and of proper data type.
+ Python is strongly typed as the interpreter keeps track of all variables types. 
+Python will always remain a dynamically typed language. 
+However, PEP 484 introduced type hints, which make it possible to also do static type checking of Python code. 
+Unlike how types work in most other statically typed languages, type hints by themselves don't cause Python to enforce types.
+
 
 Q: How can you copy an object in Python? How to make a deep copy?  
-A:
+A: use `=` operator to create a copy of an object. To make a deep copy (or clone) of an object, 
+we import the built-in copy module in Python. This module has the deepcopy() method which simplifies our task.
+````python
+import copy
+
+# Using '=' operator
+x = [1, 2, 3]
+y = x
+x[0] = 5    # value of 'y' also changes as it is the SAME object
+x[1] = 15
+print("Shallow copy: ", y)  # Shallow copy:  [5, 15, 3]
+
+# Using copy.deepcopy()
+a = [10, 20, 30]
+b = copy.deepcopy(a)
+a[1] = 70   # value of 'b' does NOT change because it is ANOTHER object
+print("Deep copy: ", b)  # Deep copy:  [10, 20, 30]
+
+````
 
 Q: How memory is managed in Python? Why garbage collector exists in Python?  
-A:
+A: The Python memory manager manages chunks of memory called “Blocks”. 
+A collection of blocks of the same size makes up the “Pool”. 
+Pools are created on Arenas, chunks of 256kB memory allocated on heap=64 pools. 
+If the objects get destroyed, the memory manager fills this space with a new object of the same size.
+So, Python garbage collection algorithm is very useful to open up space in the memory.
 
 Q: How the garbage collector works in Python? Describe Python's garbage collection mechanism in brief.  
-A:
+A: The garbage collector is keeping track of all objects in memory. 
+A new object starts its life in the first generation of the garbage collector. 
+If Python executes a garbage collection process on a generation and an object survives, 
+it moves up into a second, older generation.
+Garbage collection is implemented in Python in two ways: reference counting and generational.
+When the reference count of an object reaches 0, 
+reference counting garbage collection algorithm cleans up the object immediately.
 
 Q: How can you share global variables across modules? Is it a good idea to do that?  
-A: 
+A: Globals in Python are global to a module, not across all modules. 
+If you need truly global variables from imported modules, you can set those at an attribute of the module where you're importing it.
+The best way to share global variables across modules across a single program is to create a config module. 
+Just import the config module in all modules of your application; the module then becomes available as a global name.
 
 Q: What is the `__slots__` attribute used in a class for?  
-A: 
-Why use `__slots__` : Faster attribute access
+A: Why use `__slots__` : Faster attribute access. 
+Slots provide a special mechanism to reduce the size of objects.It is a concept of memory optimisation on objects.
+Also object with slots can't set, get, give different attributes, which `__slots__` doesn't include.
+````python
+import timeit
+
+
+class GFG(object):
+    __slots__ = 'foo'
+
+
+class Usual(object):
+    pass
+
+
+def get_set_delete_fn(obj):
+    def get_set_delete():
+        obj.foo = 'foo'
+        obj.foo
+        del obj.foo
+    return get_set_delete
+
+
+if __name__ == "__main__":
+    instance = GFG()
+    instance_2 = Usual()
+    instance_2.new = "new"
+    print(instance_2.new)  # new
+    instance.new = "new"
+    print(instance.new)  # AttributeError: 'GFG' object has no attribute 'new'
+    print(min(timeit.repeat(get_set_delete_fn(instance))))  # 0.1264069
+    print(min(timeit.repeat(get_set_delete_fn(instance_2))))  # 0.16134380000000004
+````
 
 Q: What are metaclasses in Python?  
-A: 
+A: A metaclass in Python is a class of a class that defines how a class behaves. 
+A class in Python defines how the instance of the class will behave. Custom metaclasses:
+```python
+class SingletonMeta(type):
+    _instances = {}
+    def __call__(cls, *args, **kwargs):
+        if cls not in cls._instances:
+            cls._instances[cls] = super(SingletonMeta,cls).__call__(*args, **kwargs)
+        return cls._instances[cls]
+
+class SingletonClass(metaclass=SingletonMeta):
+    pass
+
+print(type(SingletonClass))  # <class '__main__.SingletonMeta'>
+```
+
 
 Q: How to create a class without a class statement?  
-A:  
+A: [link for learn about](https://www.datacamp.com/community/tutorials/python-metaclasses)
 
 
 Coding questions:
