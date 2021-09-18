@@ -117,10 +117,10 @@ p.getAge()
 A: `__main__`
 
 Q: Write a timeit decorator to measure the time of function execution.  
-A: [6_answer](6_decorator_time.py)
+A: [6_answer](Middle/6_decorator_time.py)
 
 Q: Write a decorator that will catch errors and repeat the function a maximum of 3 times (configurable).  
-A: [7_answer](7_decorator_repeater.py)
+A: [7_answer](Middle/7_decorator_repeater.py)
 
 Q: What's the output of the following code?  
 ```python
@@ -148,13 +148,13 @@ repeater = Repeater("Hello")
 for i in repeater:
     print(i)  # hello
 ```
-A: [9_answer](9_repeater.py)
+A: [9_answer](Middle/9_repeater.py)
 
 Q: Write code to get unique values from a list of complex types (custom classes). Example:  
 ```python
 [A(1, "ab"), A(2, "ab"), A(2, "aa"), A(1, "ab")] -> [A(1, "ab"), A(2, "ab"), A(2, "aa")]
 ```
-A: [10_answer](10_unique_kwrgs.py)
+A: [10_answer](Middle/10_unique_kwrgs.py)
 
 Q: We have the following code with the unknown function `f()`. In `f()`, we do not want to use a return, instead, 
 we may want to use a generator.  
@@ -167,7 +167,7 @@ The output looks like this:
 0 1 8 27 64
 ```
 Write a function `f()` so that we can have the output above.  
-A: [11_answer](11_unknown_func.py)
+A: [11_answer](Middle/11_unknown_func.py)
 
 Q: What's the output of the following code?  
 ```python

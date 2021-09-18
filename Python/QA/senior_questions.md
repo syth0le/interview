@@ -162,7 +162,7 @@ def f3(arr):
     l2 = sorted(l1)
     return [i for i in l1 if i < (0.5*0.5)]
 ```
-A: [9_answer](9_O_big.py)
+A: [9_answer](Senior/9_O_big.py)
 
 Q: Write a one-liner that will count the number of capital letters in a file. 
 Your code should work even if the file is too big to fit in memory.  
