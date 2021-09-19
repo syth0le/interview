@@ -94,7 +94,7 @@ So, Python doesn't recognize and free circular memory references before using th
 
 Q: Is it possible to have a producer thread reading from the network and a consumer thread writing to a file, really 
 work in parallel? What about GIL?  
-A: 
+A: --//--
 
 Q: What is GIL? Why GIL still exists?  
 A: The GIL is a single lock on the interpreter itself which adds a rule that execution 
