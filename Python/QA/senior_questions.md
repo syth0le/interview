@@ -85,7 +85,7 @@ It means if you change what a parameter refers to within a function, the change 
 
 Q: What tools help you find code smells in code or perform static code analysis? What else do you know/use to make your 
 code maintainable and readable?  
-A: --//--
+A: flake8, black
 
 Q: Whenever Python exits, why isn't all the memory de-allocated?  
 A: When Python exit, the object referenced from global namespaces of Python modules are not always deallocated. 
