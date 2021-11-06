@@ -241,7 +241,7 @@ Coding questions:
 ------
 
 Q: Give an example of a filter and reduce over an iterable object.  
-A: 
+A: [1_answer](Senior/1_reduce_filter.py)
 
 Q: Write a function that reverses the generator?  
 A: [2_answer](Senior/2_reverse_generator.py)
