@@ -8,7 +8,7 @@
 3. **Integration** - тестирование интеграции с различными сервисами, микросервисами и тд.
 4. **E2E** - тестирование  с вызовом допустим начиная с **_request-FE-BE-DB-BE-FE-result_**. Эмуляция сценария запускаемого пользователем
 
-- ![img.png](pictures/img.png)
+- ![img.png](pictures/testing/img.png)
 - чем выше в пирамиде вид тестирования , тем сложнее писать тесты
 
 ## Линтеры, форматтеры, тайпинги
@@ -33,20 +33,36 @@
 - проверяются отдельные модули/классы/функции
 
 ### Pytest
-![img.png](pictures/img2.png)
+![img.png](pictures/testing/img2.png)
 
 pytest парсит исходный код тестов и подменяет вызов assert в тестах на подходящую функцию, которая добавляет возможность интроспекции.
 
 #### pytest: raises, xfail, skipif
 
 - `raises` - отвечает за отлавливание ошибок в тесте - отловил, значит тест прошёл
-![img.png](pictures/img3.png)
+    ```python
+    def test_raises():
+        with pytest.raises(IndexError):
+            kth_stat(1, 0)
+    ```
 - `xfail` - позволяет пометить тест, что он сломан. помечают когда чинить долго и дорого 
 / функциональность не используется сейчас
-на тестовый сценарий влиять не будет. 
-![img.png](pictures/img4.png)
+на тестовый сценарий влиять не будет.
+    
 - `skipif` - позволяет какой то тест пропустить. Можно указать условие когда пропустится. Я часто использую если под какой причине тест не работает на какой то системе (Windows например)
-![img.png](pictures/img5.png)
+    ```python
+    @pytest.mark.xfail()
+    def test_raises():
+        kth_stat([1 ,2, 3], 100)
+    ```
+    ```python
+    @pytest.mark.skipif(
+        sys.platform == 'macos',
+        reason='This test fails on mac',
+    )
+    def test_not_run_on_mac():
+        assert kth_stat([1 ,2, 3], 100) == 499
+    ```
 
 #### Pytest: полезные флаги
 - `--collect-only` - вывод списка найденных тестов
@@ -86,11 +102,43 @@ def call_me_everywhere():
 
 - наследование фикстур - важная вещь, чтобы не дублировать участки кода. 
 Принято декомпозировать логику, чтобы избежать фикстур в 100 строк кода к примеру.
-![img.png](pictures/img6.png)
+    ```python
+    @pytest.fixture
+    def init_db():
+        print('init_db')
+  
+    @pytest.fixture
+    def run_migrations(init_db):
+        print('run_migrations')
+  
+    @pytest.fixture
+    def create_superuser(run_migrations):
+        print('create_superuser')
+  
+    def test_one(create_superuser):
+        print('test one')
 
+    def test_two(run_migrations):
+        print('test two')
+    ```
+    ```
+    OUTPUT:
+    test_one: init_db 
+              run_migrations 
+              create_superuser
+              test one
+
+    test_two: init_db 
+              run_migrations 
+              test two
+    ```
 - `conftest.py` - файлик, откуда фикстура может подтягиваться без импорта явного. Принято фикстуры держать там, которые надо переиспользовать в нескольких тестах и в разных модулях.
 - `pytest.ini` - основной конфигурационный файл, в котором можно изменять поведение pytest по-умолчанию
-![img.png](pictures/img7.png)
+    ```
+    [pytest]
+    addopts = --cov-report=html --cov=<path> --flake8
+    testpath = <test_paths>
+    ```
 - `pytest-coverage` плагин показывающий % покрытия тестами код проекта
 
 #### parametrize
@@ -102,10 +150,48 @@ def test_positive_float_error(value):
     with pytest.raises(ValueError):
         cls.var = value
 ```
-- **нельзя так делать**
-![img.png](pictures/img8.png)
-- есть еще библиотека hypothesis - параметризация для ленивых.
-![img.png](pictures/img9.png)
+**нельзя так делать**
+```python
+@parametrized_expand_doc(
+    [
+        (False, False, False, False, False, False, 3, False),
+        (False, False, True, False, False, False, 3, False),
+        (False, True, False, False, False, False, 5, False),
+        (False, True, True, False, False, False, 6, True),
+        (True, False, False, False, False, False, 4, True),
+        (True, False, True, False, False, False, 4, True),
+        (True, True, False, False, False, False, 6, True),
+        (True, True, True, False, False, False, 6, True),
+        (False, False, False, True, False, False, 3, False),
+        (False, False, False, False, True, False, 3, False),
+        (False, False, False, False, False, True, 3, False),
+        (False, True, False, True, False, False, 6, True),
+        (False, True, False, False, True, False, 6, True),
+        (False, True, False, False, False, True, 6, True),
+    ]
+)
+def test_list_smth(
+    is_active,
+    is_preview_mode,
+    is_user_only,
+    user_is_author,
+    user_has_permission,
+    user_in_team,
+    num_queries,
+    has_result,
+) -> None:
+...
+```
+
+есть еще библиотека hypothesis - параметризация для ленивых.
+```python
+from hypothesis import given
+import hypothesis.strategies as st
+
+@given(st.integers(), st.integers())
+def test_ints_are_commutative(x, y):
+    assert x + y == y + x
+```
 
 ## Интеграционные тесты
 
@@ -117,29 +203,109 @@ def test_positive_float_error(value):
 
 #### Mock
 `Mock` - специальный объект, на любой вызов, обращение к методам или свойствам возвращающий новый объект `Mock`
-![img.png](pictures/img10.png)
+```python
+>>> from unittest.mock import Mock
+>>> m = Mock()
+>>> m()
+<Mock name='mock()' id='4513423432'>
+>>> m.f()
+<Mock name='mock.f()' id='4512334234'>
+>>> m.is_alive
+<Mock name='mock.is_alive' id='443434234'>
+>>> m.call_count
+1
+>>> m.f.call_count
+1
+```
 
 Пример:
-![img.png](pictures/img11.png)
-![img.png](pictures/img12.png)
-![img.png](pictures/img13.png)
+```python
+from unittest.mock import Mock
+
+class AliveChecker:
+    def __init__(self, http_session, target):
+        self.http_session = http_session
+        self.target = target
+    
+    def do_check(self):
+        try:
+            resp = self.http_session.get(f'https://{self.target}/ping')
+        except Exception:
+            return False
+        else:
+            return resp == 200
+```
+```python
+def test_with_mock():
+    get_mock = Mock(return_value=200)
+    pseudo_client = Mock()
+    pseudo_client.get = get_mock
+    alive_checker = AliveChecker(pseudo_client, 'test.com')
+    assert alive_checker.do_check()
+    pseudo_client.get.assert_called_once_with('https://test.com/ping')
+
+
+def test_with_raising_mock():
+    get_mock = Mock(side_effect=Exception('EEEEE'))
+    pseudo_client = Mock()
+    pseudo_client.get = get_mock
+    alive_checker = AliveChecker(pseudo_client, 'test.com')
+    assert not alive_checker.do_check()
+    pseudo_client.get.assert_called_once_with('https://test.com/ping')
+```
 
 #### patch
 `patch` - позволяет подменить поведение конкретной части кода
 
 Тут в примере патчим запуск Celery таски. И чтобы не ждать время пока она запустится и отработает - проверяем наличие того что она была запущена с определенными параметрами.
-![img.png](pictures/img14.png)
-![img.png](pictures/img15.png)
+```python
+from unittest.mock import patch
+
+def test_car_post_save():
+    with patch('app.another_dir.car.create.delay') as mock:
+        CarFactory()
+        mock.assert_not_called()
+        
+        car = CarFactory(enabled=True)
+        mock.assert_called_once_with(part=car.part_id)
+        
+        car.save()
+        mock.assert_called_once_with(part=car.part_id)
+```
+```python
+import math
+from unittest.mock import patch
+
+def test_patch_sin():
+    with patch('math.sin', return_value=2) as m:
+        assert math.sin(0) == 2
+        assert math.sin(1) == 2
+        assert m.call_count == 2
+```
 
 #### freezegun
 `freezegun` - библиотека, позволяющая заморозить время в тесте, чтобы исключить рандомность в тесте.
 Параметрами можно настроить от времени с датой до таймзоны, что надо зафикировать в конкретном тесте.
-![img.png](pictures/img16.png)
+```python
+from freezegun import freeze_time
+import datetime
+
+@freeze_time('2002-03-14')
+def test_smth():
+    now = datetime.datetime.now()
+    assert now == datetime.datetime(2002, 3, 14)
+```
 
 #### vcr
 `vcr` - mock внешних http-запросов
 
-![img.png](pictures/img17.png)
+```python
+from services import get_score
+
+@vcr.use_cassete('scores/200.yaml')
+def test_get_score():
+    assert get_score(1) == 21
+```
 
 При первом запуске теста ответ сохраняется в определенный `.yaml` файл. При повторных запусках теста ответ берется и подставляется из существующего файла.
 
