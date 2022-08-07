@@ -14,7 +14,7 @@
 5. Facade - facade.py
 6. Flyweight - flyweight.py
 7. Proxy - proxy.py
-*** 8. Private class = private.py
+8. *** Private class = private.py
 
 Поведенческие паттерны:
 1. Chain of Responsibility - chain_of_responsibility.py

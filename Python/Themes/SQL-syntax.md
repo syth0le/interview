@@ -151,22 +151,126 @@ SELECT * FROM Customers WHERE City LIKE 'a%б';
 SELECT * FROM Customers WHERE City NOT LIKE 'a%';
 ```
 
-# TODO: ОПЕРАТОРЫ КАК В REGEXP сюда вставить
+ОПЕРАТОРЫ С LIKE
 
-https://www.schoolsw3.com/sql/exercise_in1.php
-in
-between
-join
-group by
-подстановочный знак
-as
+Выберите все записи, где второй буквой City является "а":
+```sql
+SELECT * FROM Customers WHERE City LIKE '_a%';
+```
 
+Выберите все записи, где первая буква City "a" или "c" или "s":
+```sql
+SELECT * FROM Customers WHERE City LIKE '[acs]%';
+```
 
+Выберите все записи, где первая буква City начинается с любой буквы от "a" до "f":
+```sql
+SELECT * FROM Customers WHERE City LIKE '[a-f]%';
+```
 
-LIMIT
+Выберите все записи, в которых первая буква City не является ни "а", ни "с", ни "f":
+```sql
+SELECT * FROM Customers WHERE City LIKE '[^acf]%';
+```
+
+IN
+```sql
+SELECT * FROM Customers WHERE Country IN ('Norway', 'France');
+```
+
+BETWEEN
+```sql
+SELECT * FROM Customers WHERE Price BETWEEN 10 AND 20;
+```
+
+Выбирает все продукты названия которых попадают в диапазон между именами (в алфавитном порядке)
+```sql
+SELECT * FROM Products WHERE ProductName BETWEEN 'CHOKO' AND 'LAD';
+```
+
+AS
+```sql
+SELECT * FROM Customers AS CSTM;
+```
+
+GROUP BY
+Перечислите количество клиентов в каждой стране, заказы стран с наибольшим количеством клиентов в первую очередь:
+```sql
+SELECT COUNT(CustomerID),Country FROM Customers GROUP BY Country ORDER BY COUNT(CustomerID) DESC;
+```
 
 JOIN(ALL KINDS) +-
+LEFT JOIN
+```sql
+SELECT * FROM Orders LEFT JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
+```
 
+INNER JOIN
+INNER JOIN нужен, чтобы выбрать все записи из двух таблиц, в которых есть совпадение в обеих таблицах.
+```sql
+SELECT * FROM Orders LEFT JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
+```
+
+RIGHT JOIN
+RIGHT JOIN нужен, чтобы выбрать все записи из таблицы **Customers** плюс все совпадения в таблице **Orders**.
+```sql
+SELECT * FROM Orders RIGHT JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
+```
+
+LIMIT 
+
+OFFSET
+
+CREATE
+Создание бд с именем TEST_DB:
+```sql
+CREATE DATABASE TEST_DB
+```
+
+Создание новой таблицы под названием Persons
+```sql
+CREATE TABLE Persons (
+    PersonID int,
+    LastName varchar(255),
+    FirstName varchar(255),
+    Address varchar(255),
+    City varchar(255) 
+);
+```
+
+DROP
+Удаление базы данных с именем TEST_DB
+```sql
+DROP DATABASE TEST_DB
+``` 
+
+Удаление таблицы с именем Persons
+```sql
+DROP DATABASE Persons
+``` 
+
+TRUNCATE
+TRUNCATE TABLE - для удаление всех данных внутри таблицы
+```sql
+TRUNCATE TABLE Persons;
+``` 
+
+ALTER TABLE
+Инструкция ALTER TABLE используется для добавления, удаления или изменения столбцов в существующей таблице.
+Добавление нового столбца:
+```sql
+ALTER TABLE Customers ADD Email varchar(255);
+```
+
+Удаление столбца:
+```sql
+ALTER TABLE Customers DROP COLUMN Email;
+```
+
+Модификация столбца:
+```sql
+ALTER TABLE table_name ALTER COLUMN column_name datatype;
+```
 
 # Middle-level
 
