@@ -1,7 +1,6 @@
 # **Чередниченко Даниил**
-## Software Engineer
-8(928)325-75-80 | chdan565@gmail.com | https://github.com/syth0le | https://www.linkedin.com/in/syth0le/
-https://t.me/syth0le
+## Software Engineer 
+chdan565@gmail.com | https://github.com/syth0le | https://www.linkedin.com/in/syth0le/ | https://t.me/syth0le
 
 Город: Воронеж
  
