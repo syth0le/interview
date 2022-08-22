@@ -1,4 +1,4 @@
-# Junior-level![img.png](img.png)
+# Junior-level![img.png](pictures/sql/img.png)
 **SELECT**
 
 ```sql 
