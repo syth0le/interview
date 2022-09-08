@@ -340,6 +340,21 @@ def test_smth():
     assert now == datetime.datetime(2002, 3, 14)
 ```
 
+- **Заметка**
+  - стоит аккуратно использовать эту библиотеку в случае, если в проекте используется Throttling. В противном случае будет падать ошибка при запуске единичных тестов, при запуске всех тестов все будет ок. Как временное решение - использовать fixture, которая отключает в settings Throttle класс.
+    ````python
+      @pytest.fixture()
+      def disable_throttling(settings):  # noqa
+          """
+          Disabling throttling and related problems with freezegun:
+          fake_time() takes 0 positional arguments but 1 was given
+          """
+          default_throttle_rates = settings.REST_FRAMEWORK['DEFAULT_THROTTLE_RATES']
+          del settings.REST_FRAMEWORK['DEFAULT_THROTTLE_RATES']
+          yield
+          settings.REST_FRAMEWORK['DEFAULT_THROTTLE_RATES'] = default_throttle_rates
+    ````
+
 #### vcr
 `vcr` - mock внешних http-запросов
 
