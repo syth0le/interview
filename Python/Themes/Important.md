@@ -1,4 +1,4 @@
-0. Сортировки. (Пузырьковая, Перемешиванием, Вставками, Quick-sort, Слиянием, Binary-tree sort, Шелла, Пирамидальная - heap sort).
+1. Сортировки. (Пузырьковая, Перемешиванием, Вставками, Quick-sort, Слиянием, Binary-tree sort, Шелла, Пирамидальная - heap sort).
 + сложность сортировки знать и знать как определить если что
 + деревья
 + каких типов бывают деревья
@@ -21,14 +21,14 @@
 - процессу принадлежит память, которою разделяют потоки внутри этого процесса.
 - память одного процесса недоступна памяти другого процесса. Полная изоляция.
 
-7. Всё что связано с conditional variables: паттерн producer - consumer, ложные срабатывания, double-checked lock.
+6. Всё что связано с conditional variables: паттерн producer - consumer, ложные срабатывания, double-checked lock.
 
-8. Назовите известные вам примитивы синхронизации - mutex, critical section, event, semaphore, conditional variable, hProcess, hFile, hSocket, hPipe и т.д.
+7. Назовите известные вам примитивы синхронизации - mutex, critical section, event, semaphore, conditional variable, hProcess, hFile, hSocket, hPipe и т.д.
 
-9. Что такое deadlock? Привидите пример и скажите как можно избежать подобных ситуаций?
+8. Что такое deadlock? Привидите пример и скажите как можно избежать подобных ситуаций?
 
-10. Какие способы межпроцессного взаимодействия вам известны - shared memory, pipes, sockets, files, mail-slots, windows messages и т.д.
+9. Какие способы межпроцессного взаимодействия вам известны - shared memory, pipes, sockets, files, mail-slots, windows messages и т.д.
 
-11. Какой способ распаралеливания задач лучше - по процессам или по потокам?
+10. Какой способ распаралеливания задач лучше - по процессам или по потокам?
 
-12. Концепции - RAII, SOLID, общий набор паттернов проектирования (singleton, abstract fabric и т.д.).
+11. Концепции - RAII, SOLID, общий набор паттернов проектирования (singleton, abstract fabric и т.д.).
