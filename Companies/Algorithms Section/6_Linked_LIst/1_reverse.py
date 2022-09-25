@@ -6,6 +6,9 @@ class Node:
         self.data = data
         self.next = next
 
+    def __repr__(self):
+        return f'{self.data}'
+
 
 def reverse(head: Node) -> Node:
     tail = None
