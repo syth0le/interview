@@ -188,7 +188,13 @@ $ killall -s 15 sleep
 ### Состояния процессов
 [WIKI](https://it.wikireading.ru/6567)
 
+### UDP
+[YT](https://www.youtube.com/watch?v=GBrLfZvRrd8)
+
 ### TCP
+[YT](https://www.youtube.com/watch?v=CKUOb4htnB4)
+[YT скользящее окно](https://www.youtube.com/watch?v=hd6QNXK5rPk)
+[YT Установление соединения](https://www.youtube.com/watch?v=vt69HEbZ_pI)
 
 ### DNS
 
