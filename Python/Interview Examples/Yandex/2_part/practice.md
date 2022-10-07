@@ -6,6 +6,7 @@
   - https://github.com/zhuquanbin/ttl_cache/blob/master/cache.py
   - https://github.com/sixty-north/autottlcache/blob/6f0c79d070aac2e7794d338b11f6e01e3e3fa1bd/source/autottlcache/cache.py
   - https://github.com/patrickbird/cachupy/blob/master/cachupy/cachupy.py
+- [Threading](https://docs-python.ru/standart-library/modul-threading-python/klass-lock-modulja-threading/)
 
 
 - Что такое **Генератор**? `yield`
