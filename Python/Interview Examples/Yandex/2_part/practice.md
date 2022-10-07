@@ -1,6 +1,7 @@
 - Что такое итераторы и генераторы
 - как превращать класс в итератор
 - как писать бесконечный генератор фибоначчи
+  - [Generator & Iterator](https://stackoverflow.com/questions/42983569/how-to-write-a-generator-class)
 - Как сворачивать числа в диапазоны
 - Как писать потокобезопасный TTL-cache, с возможностью ручной очистки.
   - https://github.com/zhuquanbin/ttl_cache/blob/master/cache.py
