@@ -2,8 +2,8 @@
 - IPV6-адреса(для общего развития)
 - ~~маска подсети~~
 - ~~URL-кодирование~~
-- ограничения по памяти
-- оценка алгоритмов
+- ~~ограничения по памяти~~
+- ~~оценка алгоритмов~~
 - ~~сигналы Linux~~
 - состояния процессов ~~???~~
 - ~~TCP~~
@@ -83,8 +83,14 @@ IPv4 использует 32-битные (четырёхбайтные) адр�
 
 
 ### ограничения по памяти
+- [Статья VC](https://ulearn.me/course/complexity/Vychislitel_naya_slozhnost__8ed9f05c-20cc-46bc-9466-bcd585cb74c4)
 
 ### оценка алгоритмов
+- [ИНФОГРАФИК](https://www.bigocheatsheet.com/)
+- [Статья 1](https://tproger.ru/articles/computational-complexity-explained/)
+- [Cтатья 2](https://tproger.ru/translations/algorithms-and-data-structures/)
+- [Статья 3](https://ulearn.me/course/complexity/O_notatsiya_874d0aa4-8179-49cd-b3dd-8e924ad14eac)
+
 
 ### сигналы Linux
 - [Статья](http://snakeproject.ru/rubric/article.php?art=linux_signals_29042020)
