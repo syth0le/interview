@@ -8,10 +8,12 @@ chdan565@gmail.com | https://github.com/syth0le | https://www.linkedin.com/in/sy
 - 2+ года опыта в Backend разработке на Python.
 - Имею огромный опыт в написании Unit тестов различного уровня сложности.
 - Постоянно развиваюсь. В данный момент изучаю язык Go и инфраструктуру AWS.
+- Имею отличное понимание сетей, сетевых протоколов, базовых устройств коммуникации по сети и устройстве Linux.
+- Алгоритмическая подготовка, знание основных структур данных и отличное понимание сложности алгоритмов.
 
 ### Technical Skills                                                                                                                             
 * **Languages**: Python, Go, SQL
-* **Technologies**: Django REST framework, Django, Pydantic, FastAPI
+* **Technologies**: Django REST framework, Django, Pydantic, FastAPI, asyncio
 * **Tools**:  Redis, Celery, AWS S3, Swagger, ElasticSearch
 * **Containerization**: Docker
 * **Orchestration**: K8s
@@ -23,7 +25,7 @@ chdan565@gmail.com | https://github.com/syth0le | https://www.linkedin.com/in/sy
 * **Intermediate English (B1)**
 
 ### Experience
-#### Август 2021 - Сентябрь 2022
+#### Апрель 2021 - Сентябрь 2022
 #### Quantori - Software Engineer
 
 **Проект №1**
@@ -53,7 +55,7 @@ chdan565@gmail.com | https://github.com/syth0le | https://www.linkedin.com/in/sy
 
 Разработка системы бэкапа для Electronic Laboratory Notebook заказчика.
 #### Position: Middle Python developer
-#### Стэк: Python, AWS, AWS S3, Apache AirFlow, Pydantic, PyTest, Pandas, Mypy
+#### Стэк: Python, FastAPI, asyncio, AWS, AWS S3, Apache AirFlow, Pydantic, PyTest, Pandas, Mypy
 - Отвечал за архитектуру сущностей и логику их взаимодействия при бэкапе системы.
 - Участвовал в реализации функциональности восстановления системы из бэкапа.
 
