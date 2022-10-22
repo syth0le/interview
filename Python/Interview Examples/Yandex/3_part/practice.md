@@ -1,6 +1,7 @@
 - Нужно уметь делать оценку сложности алгоритмов
 - Посмотреть как фильтровать сортированный список по другому сортированному списку
   - [TASK](practice/task_1.py)
+  - [TASK POSSIBLE](practice/task_1_possible.py)
   - (задачка такая будет скорее всего где надо будет напечатать элементы из 1 последовательности, которых нет во 2 последовательности)
   - [StackOverflow](https://ru.stackoverflow.com/questions/969031/python-%D0%9A%D0%B0%D0%BA-%D0%BE%D1%82%D1%81%D0%BE%D1%80%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C-%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D0%BD%D0%B0-%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%B5-%D0%B4%D1%80%D1%83%D0%B3%D0%BE%D0%B3%D0%BE-%D1%81%D0%BF%D0%B8%D1%81%D0%BA%D0%B0)
   - [LEETCODE EXAMPLE](https://leetcode.com/problems/sort-the-people/)
