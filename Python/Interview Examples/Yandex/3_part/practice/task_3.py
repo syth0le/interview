@@ -14,14 +14,14 @@ def solution(num1: list[int], num2: list[int]):
     N = len(num1)
     hashmap = {}
     res = []
-    for i in range(1, N + 1):
-        curr = num1[i-1]
+    for i in range(0, N):
+        curr = num1[i]
         if curr not in hashmap:
             hashmap[curr] = 1
         else:
             hashmap[curr] += 1
         temp = 0
-        for item in num2[:i]:
+        for item in num2[:i+1]:
             if item in hashmap:
                 temp += 1
         res.append(temp)
