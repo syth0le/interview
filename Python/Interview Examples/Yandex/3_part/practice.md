@@ -10,8 +10,12 @@
   - [TASK](practice/task_2.py)
   - когда есть какая-то последовательность запросов, которая упорядочена по времени и надо написать структуру, которая может обрабатывать такие запросы
   - [EXAMPLES](https://informatics.msk.ru/py-source/source/dir/240-348?page=4&cnt=50)
+  - [DATA STRUCTURES](https://realpython.com/python-data-structures/#priority-queues)
+  - heapq, priorityqueue
+  - [LEETCODE](https://leetcode.com/problems/number-of-recent-calls/submissions/)
 - Может еще такое быть: 
   - [TASK](practice/task_3.py)
+  - [TASK LOG(N)](practice/task_3_log_n.py)
   - есть две поисковые выдачи, которые заданы векторами простых чисел длины N, для всех K от 1 до N нужно посчитать количество общих документов в топах размера K.
   - (в общем почитать про пересечение топов двух выдач, думаю в инете что-то будет)
 - Такое еще может быть:
