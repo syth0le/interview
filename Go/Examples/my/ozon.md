@@ -41,7 +41,7 @@ func main() {
             err := fetch(url)
             if err != nil {
                 out <- "адрес url - ok"
-                continue
+                return
             }
             out <- "адрес url - not ok"
       }(url)
